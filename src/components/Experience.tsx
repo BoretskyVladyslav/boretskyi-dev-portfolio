@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
 
 interface ExperienceItem {
   role: string;
@@ -45,6 +45,30 @@ const education: readonly EducationItem[] = [
   },
 ];
 
+const itemVariants: Variants = {
+  hidden: { opacity: 0, y: 10 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.4, ease: "easeOut" },
+  },
+};
+
+const dotVariants: Variants = {
+  hidden: { scale: 0.5, borderColor: "rgba(255,255,255,0)" },
+  show: {
+    scale: 1,
+    borderColor: "rgba(255,255,255,0.2)",
+    transition: { duration: 0.4, ease: "easeOut" },
+  },
+  hover: {
+    scale: 1.2,
+    borderColor: "rgba(255,255,255,0.4)",
+    backgroundColor: "rgba(255,255,255,0.1)",
+    transition: { duration: 0.2 },
+  },
+};
+
 export function Experience() {
   return (
     <section
@@ -53,10 +77,10 @@ export function Experience() {
       className="flex flex-col gap-12 pt-16 md:pt-24"
     >
       <motion.div
-        initial={{ opacity: 0, y: 20 }}
+        initial={{ opacity: 0, y: 10 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-100px" }}
-        transition={{ duration: 0.5, ease: "easeOut" }}
+        transition={{ duration: 0.4, ease: "easeOut" }}
       >
         <h2
           id="experience-heading"
@@ -79,14 +103,16 @@ export function Experience() {
                 <motion.div
                   key={`${item.company}-${item.role}`}
                   role="listitem"
-                  initial={{ opacity: 0, x: -10 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true, margin: "-50px" }}
-                  transition={{ duration: 0.4, ease: "easeOut" }}
-                  className="relative flex gap-6"
+                  variants={itemVariants}
+                  initial="hidden"
+                  whileInView="show"
+                  whileHover="hover"
+                  viewport={{ once: true, margin: "-100px" }}
+                  className="group relative flex gap-6"
                 >
                   <div className="flex flex-col items-center">
-                    <div
+                    <motion.div
+                      variants={dotVariants}
                       className="mt-1.5 h-2 w-2 shrink-0 rounded-full border border-white/20 bg-background"
                       aria-hidden="true"
                     />
@@ -126,14 +152,16 @@ export function Experience() {
                 <motion.div
                   key={`${item.school}-${item.degree}`}
                   role="listitem"
-                  initial={{ opacity: 0, x: -10 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true, margin: "-50px" }}
-                  transition={{ duration: 0.4, ease: "easeOut" }}
-                  className="relative flex gap-6"
+                  variants={itemVariants}
+                  initial="hidden"
+                  whileInView="show"
+                  whileHover="hover"
+                  viewport={{ once: true, margin: "-100px" }}
+                  className="group relative flex gap-6"
                 >
                   <div className="flex flex-col items-center">
-                    <div
+                    <motion.div
+                      variants={dotVariants}
                       className="mt-1.5 h-2 w-2 shrink-0 rounded-full border border-white/20 bg-background"
                       aria-hidden="true"
                     />

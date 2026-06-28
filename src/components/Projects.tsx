@@ -65,15 +65,16 @@ export function Projects() {
             href={project.link}
             target="_blank"
             rel="noopener noreferrer"
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-50px" }}
+            whileHover={{ y: -4, scale: 1.01 }}
+            viewport={{ once: true, margin: "-100px" }}
             transition={{
-              duration: 0.5,
+              duration: 0.4,
               ease: "easeOut",
               delay: index * 0.1,
             }}
-            className="group relative flex h-full flex-col justify-between rounded-xl border border-white/10 bg-white/5 p-6 transition-all duration-300 hover:scale-[1.02] hover:border-white/20 hover:bg-white/10"
+            className="group relative flex h-full flex-col justify-between rounded-xl border border-white/10 bg-white/5 p-6 transition-colors duration-300 hover:border-white/20 hover:bg-white/10"
           >
             <div
               className="absolute inset-0 rounded-xl bg-gradient-to-br from-white/5 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"
