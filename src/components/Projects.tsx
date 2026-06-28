@@ -5,11 +5,11 @@ import { ArrowUpRight } from "lucide-react";
 
 const projects = [
   {
-    title: "AI-Powered Workflow Engine & Node Editor",
-    link: "#",
-    tech: ["Next.js", "React Flow", "Zustand", "FastAPI"],
+    title: "Corporate Accounting Website (ACG)",
+    link: "https://buh.acg-ua.com",
+    tech: ["Next.js", "Sanity.io", "Tailwind CSS", "SendPulse API"],
     architecture:
-      "Regex-based variable parsing for dynamic handles, global state syncing via Zustand, and Python-driven Directed Acyclic Graph (DAG) validation to prevent execution loops.",
+      "Achieved a 100/100 Core Web Vitals score via aggressive static site generation (SSG) and next/image optimization. Automated client lead pipelines with SendPulse API and Next.js API Routes for instant Telegram alerts, deployed on fully managed Vercel infrastructure.",
   },
   {
     title: "Kolo Playground",
