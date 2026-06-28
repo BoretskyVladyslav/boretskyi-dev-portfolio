@@ -5,15 +5,20 @@ import "./globals.css";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
+  display: "swap",
 });
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://boretskyi.dev"),
+  alternates: {
+    canonical: "/",
+  },
   title: {
     default: "Vladyslav Boretskyi | Frontend Engineer",
     template: "%s | Vladyslav Boretskyi",
@@ -63,7 +68,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistMono.variable}`}
+      className={`${geistSans.variable} ${geistMono.variable}`}
       style={{ colorScheme: "dark" }}
     >
       <body className="min-h-screen bg-black text-foreground antialiased">

@@ -59,7 +59,7 @@ export function Hero() {
           variants={item}
           className="max-w-2xl text-base leading-relaxed text-muted-foreground"
         >
-          <span className="text-[#4AF626]">//</span>{" "}
+          <span className="text-[#4AF626]">{"//"}</span>{" "}
           Frontend Engineer specializing in React, Next.js, and
           high-performance web applications (100/100 Core Web Vitals).
         </motion.p>
