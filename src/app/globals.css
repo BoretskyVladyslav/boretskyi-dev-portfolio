@@ -1,15 +1,16 @@
 @import "tailwindcss";
 
 @theme inline {
-  --color-background: #0a0a0a;
-  --color-foreground: #ededed;
-  --color-muted: #a1a1aa;
-  --color-muted-foreground: #71717a;
-  --color-border: rgba(255, 255, 255, 0.1);
+  --color-background: #000000;
+  --color-foreground: #e0e0e0;
+  --color-muted: #666666;
+  --color-muted-foreground: #888888;
+  --color-border: rgba(255, 255, 255, 0.15);
   --color-primary: #ffffff;
   --color-primary-foreground: #000000;
-  
-  --font-sans: var(--font-geist-sans);
+  --color-accent: #4AF626;
+
+  --font-sans: var(--font-geist-mono);
   --font-mono: var(--font-geist-mono);
 }
 
@@ -28,24 +29,52 @@ html::-webkit-scrollbar {
 }
 
 ::selection {
-  background: rgba(255, 255, 255, 0.9);
+  background: #4AF626;
   color: #000;
 }
 
 body {
-  background-color: var(--color-background);
+  background-color: #000000;
   color: var(--color-foreground);
-  font-family: var(--font-sans);
+  font-family: var(--font-mono);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* CRT scanline overlay */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0, 0, 0, 0.08) 2px,
+    rgba(0, 0, 0, 0.08) 4px
+  );
+}
+
+/* Blinking block cursor */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+
+.cursor-blink {
+  display: inline-block;
+  animation: blink 1s step-start infinite;
+  color: #4AF626;
+  margin-left: 2px;
+}
+
 @utility glow {
-  box-shadow: 0 0 20px rgba(255, 255, 255, 0.05);
+  box-shadow: 0 0 12px rgba(74, 246, 38, 0.3);
 }
 
 @utility glass {
-  background: rgba(255, 255, 255, 0.03);
-  backdrop-filter: blur(10px);
-  border: 1px solid var(--color-border);
+  background: rgba(74, 246, 38, 0.04);
+  border: 1px solid rgba(74, 246, 38, 0.15);
 }

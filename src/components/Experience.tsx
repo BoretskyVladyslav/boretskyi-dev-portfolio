@@ -51,21 +51,19 @@ const itemVariants: Variants = {
   show: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.4, ease: "easeOut" },
+    transition: { duration: 0.3, ease: "easeOut" },
   },
 };
 
 const dotVariants: Variants = {
-  hidden: { scale: 0.5, borderColor: "rgba(255,255,255,0)" },
+  hidden: { opacity: 0, backgroundColor: "rgba(255,255,255,0.2)" },
   show: {
-    scale: 1,
-    borderColor: "rgba(255,255,255,0.2)",
-    transition: { duration: 0.4, ease: "easeOut" },
+    opacity: 1,
+    backgroundColor: "rgba(255,255,255,0.2)",
+    transition: { duration: 0.3, ease: "easeOut" },
   },
   hover: {
-    scale: 1.2,
-    borderColor: "rgba(255,255,255,0.4)",
-    backgroundColor: "rgba(255,255,255,0.1)",
+    backgroundColor: "rgba(255,255,255,0.8)",
     transition: { duration: 0.2 },
   },
 };
@@ -81,7 +79,7 @@ export function Experience() {
         initial={{ opacity: 0, y: 10 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-100px" }}
-        transition={{ duration: 0.4, ease: "easeOut" }}
+        transition={{ duration: 0.3, ease: "easeOut" }}
       >
         <h2
           id="experience-heading"
@@ -114,7 +112,7 @@ export function Experience() {
                   <div className="flex flex-col items-center">
                     <motion.div
                       variants={dotVariants}
-                      className="mt-1.5 h-2 w-2 shrink-0 rounded-full border border-white/20 bg-background"
+                      className="mt-1.5 h-2 w-2 shrink-0 rounded-[2px]"
                       aria-hidden="true"
                     />
                     {!isLast && (
@@ -163,7 +161,7 @@ export function Experience() {
                   <div className="flex flex-col items-center">
                     <motion.div
                       variants={dotVariants}
-                      className="mt-1.5 h-2 w-2 shrink-0 rounded-full border border-white/20 bg-background"
+                      className="mt-1.5 h-2 w-2 shrink-0 rounded-[2px]"
                       aria-hidden="true"
                     />
                     {!isLast && (

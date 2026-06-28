@@ -63,21 +63,11 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable}`}
+      className={`${geistMono.variable}`}
       style={{ colorScheme: "dark" }}
     >
-      <body className="min-h-screen bg-background text-foreground antialiased selection:bg-white/20">
-        <div
-          className="pointer-events-none fixed inset-0 z-[-1] bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"
-          style={{
-            maskImage:
-              "radial-gradient(ellipse 60% 50% at 50% 0%, #000 70%, transparent 100%)",
-            WebkitMaskImage:
-              "radial-gradient(ellipse 60% 50% at 50% 0%, #000 70%, transparent 100%)",
-          }}
-          aria-hidden="true"
-        />
-        <div className="mx-auto max-w-3xl px-6 py-12 md:py-24">
+      <body className="min-h-screen bg-black text-foreground antialiased">
+        <div className="mx-auto max-w-4xl px-6 py-12 md:py-20">
           {children}
         </div>
       </body>
