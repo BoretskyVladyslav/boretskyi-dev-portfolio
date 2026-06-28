@@ -5,7 +5,7 @@ import { ArrowUpRight } from "lucide-react";
 
 const projects = [
   {
-    title: "Corporate Accounting Website (ACG)",
+    title: "Alex Consulting (ACG)",
     link: "https://buh.acg-ua.com",
     tech: ["Next.js", "Sanity.io", "Tailwind CSS", "SendPulse API"],
     architecture:
