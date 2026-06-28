@@ -49,7 +49,7 @@ function ProjectRow({ project }: { project: Project }) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-80px" }}
       transition={{ duration: 0.3, ease: "easeOut" }}
-      className="group border-b border-white/10 first:border-t transition-colors duration-200 hover:bg-white/5"
+      className="group border-b border-white/10 first:border-t transition-all duration-300 hover:bg-white/5 hover:scale-[1.01] hover:!opacity-100 hover:!blur-none hover:!grayscale-0 group-hover/list:opacity-40 group-hover/list:blur-[1px] group-hover/list:grayscale border-l-2 border-l-transparent hover:border-l-white"
     >
       <a
         href={project.link}
@@ -60,8 +60,8 @@ function ProjectRow({ project }: { project: Project }) {
       >
         {/* Left: Project Name */}
         <span
-          className={`flex-[1] text-lg font-medium tracking-tight transition-colors duration-200 ${
-            hovered ? "text-foreground" : "text-foreground/70"
+          className={`flex-[1] text-lg font-medium tracking-tight transition-all duration-200 ${
+            hovered ? "bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent" : "text-foreground/70"
           }`}
         >
           {project.title}
@@ -109,7 +109,7 @@ export function Projects() {
         </p>
       </motion.div>
 
-      <div role="list" className="flex flex-col -mx-4 md:mx-0">
+      <div role="list" className="group/list flex flex-col -mx-4 md:mx-0">
         {projects.map((project) => (
           <div key={project.title} role="listitem">
             <ProjectRow project={project} />
