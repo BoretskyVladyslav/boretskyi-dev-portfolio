@@ -1,6 +1,7 @@
 "use client";
 
 import { motion, type Variants } from "framer-motion";
+import { SpotlightCard } from "./SpotlightCard";
 
 interface ExperienceItem {
   role: string;
@@ -100,7 +101,7 @@ export function Experience() {
             {experience.map((item, index) => {
               const isLast = index === experience.length - 1;
               return (
-                <motion.div
+                <SpotlightCard
                   key={`${item.company}-${item.role}`}
                   role="listitem"
                   variants={itemVariants}
@@ -108,7 +109,7 @@ export function Experience() {
                   whileInView="show"
                   whileHover="hover"
                   viewport={{ once: true, margin: "-100px" }}
-                  className="group relative flex gap-6"
+                  className="group relative flex gap-6 rounded-xl border border-transparent p-4 -mx-4 transition-colors hover:border-white/10 hover:bg-white/5"
                 >
                   <div className="flex flex-col items-center">
                     <motion.div
@@ -123,7 +124,7 @@ export function Experience() {
                       />
                     )}
                   </div>
-                  <div className={`flex flex-col gap-2 ${!isLast ? "pb-12" : ""}`}>
+                  <div className={`flex flex-col gap-2 relative z-10 pointer-events-none ${!isLast ? "pb-8" : ""}`}>
                     <div className="flex flex-wrap items-baseline justify-between gap-2">
                       <h4 className="font-medium text-foreground">{item.role}</h4>
                       <time className="font-mono text-xs text-muted-foreground">
@@ -137,7 +138,7 @@ export function Experience() {
                       {item.description}
                     </p>
                   </div>
-                </motion.div>
+                </SpotlightCard>
               );
             })}
           </div>
@@ -149,7 +150,7 @@ export function Experience() {
             {education.map((item, index) => {
               const isLast = index === education.length - 1;
               return (
-                <motion.div
+                <SpotlightCard
                   key={`${item.school}-${item.degree}`}
                   role="listitem"
                   variants={itemVariants}
@@ -157,7 +158,7 @@ export function Experience() {
                   whileInView="show"
                   whileHover="hover"
                   viewport={{ once: true, margin: "-100px" }}
-                  className="group relative flex gap-6"
+                  className="group relative flex gap-6 rounded-xl border border-transparent p-4 -mx-4 transition-colors hover:border-white/10 hover:bg-white/5"
                 >
                   <div className="flex flex-col items-center">
                     <motion.div
@@ -172,7 +173,7 @@ export function Experience() {
                       />
                     )}
                   </div>
-                  <div className={`flex flex-col gap-2 ${!isLast ? "pb-12" : ""}`}>
+                  <div className={`flex flex-col gap-2 relative z-10 pointer-events-none ${!isLast ? "pb-8" : ""}`}>
                     <div className="flex flex-wrap items-baseline justify-between gap-2">
                       <h4 className="font-medium text-foreground">{item.degree}</h4>
                       <time className="font-mono text-xs text-muted-foreground">
@@ -183,7 +184,7 @@ export function Experience() {
                       {item.school}
                     </div>
                   </div>
-                </motion.div>
+                </SpotlightCard>
               );
             })}
           </div>

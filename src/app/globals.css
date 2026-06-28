@@ -17,6 +17,21 @@
   color-scheme: dark;
 }
 
+html {
+  scroll-behavior: smooth;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+html::-webkit-scrollbar {
+  display: none;
+}
+
+::selection {
+  background: rgba(255, 255, 255, 0.9);
+  color: #000;
+}
+
 body {
   background-color: var(--color-background);
   color: var(--color-foreground);
