@@ -13,8 +13,46 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Vladyslav Boretskyi | Frontend Engineer",
-  description: "Frontend Engineer specializing in React, Next.js, and high-performance web applications.",
+  metadataBase: new URL("https://boretskyi.dev"),
+  title: {
+    default: "Vladyslav Boretskyi | Frontend Engineer",
+    template: "%s | Vladyslav Boretskyi",
+  },
+  description:
+    "Frontend Engineer specializing in React, Next.js, and high-performance web applications with 100/100 Core Web Vitals scores.",
+  keywords: [
+    "Frontend Engineer",
+    "React",
+    "Next.js",
+    "TypeScript",
+    "Web Performance",
+    "Core Web Vitals",
+    "Vladyslav Boretskyi",
+  ],
+  authors: [{ name: "Vladyslav Boretskyi" }],
+  creator: "Vladyslav Boretskyi",
+  openGraph: {
+    type: "profile",
+    firstName: "Vladyslav",
+    lastName: "Boretskyi",
+    title: "Vladyslav Boretskyi | Frontend Engineer",
+    description:
+      "Frontend Engineer specializing in React, Next.js, and high-performance web applications with 100/100 Core Web Vitals scores.",
+    siteName: "Vladyslav Boretskyi — Portfolio",
+    locale: "en_US",
+    url: "https://boretskyi.dev",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
 };
 
 export default function RootLayout({
@@ -23,11 +61,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${geistSans.variable} ${geistMono.variable} dark`} style={{ colorScheme: 'dark' }}>
+    <html
+      lang="en"
+      className={`${geistSans.variable} ${geistMono.variable}`}
+      style={{ colorScheme: "dark" }}
+    >
       <body className="min-h-screen bg-background text-foreground antialiased selection:bg-white/20">
-        <main className="mx-auto max-w-3xl px-6 py-12 md:py-24">
+        <div className="mx-auto max-w-3xl px-6 py-12 md:py-24">
           {children}
-        </main>
+        </div>
       </body>
     </html>
   );

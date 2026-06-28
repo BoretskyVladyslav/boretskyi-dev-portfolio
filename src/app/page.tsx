@@ -5,11 +5,13 @@ import { Footer } from "@/components/Footer";
 
 export default function Home() {
   return (
-    <div className="flex flex-col gap-16 pb-8">
+    <>
       <Hero />
-      <Projects />
-      <Experience />
+      <main className="flex flex-col gap-16">
+        <Projects />
+        <Experience />
+      </main>
       <Footer />
-    </div>
+    </>
   );
 }
